@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" padding>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <!-- We use the Ionic Grid to place the form elements. -->
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <label for="">Enter phone number</label>
+            <ion-item>
+              <ion-input 
+              position="floating"
+              name="phonenumber" 
+              type="text" 
+              placeholder="0xxxxxxxxx" 
+              value="2250701686379"
+              ngModel required>
+                
+              </ion-input>
+            </ion-item>
+            <label for="">Enter pin</label>
+            <ion-item>
+              <ion-input 
+              position="floating"
+              name="pin" 
+              type="password"
+               placeholder="Password"
+               value="1002"
+               ngModel required>
+              </ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- Next, let's add a link to the register page to allow users to register if they don't already have an account. Inside the <ion-grid> component add: -->
+        <ion-row>
+          <!-- We use the routerLink directive of Angular Router to create a link to the register page. -->
+          <div text-center>
+        If you don't have an account, please <a routerLink='/register'>
+          register</a> first!
+          </div>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
